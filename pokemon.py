@@ -27,4 +27,18 @@ class Pokemon:
         print("{} gained {} health".format(self.name, heal))
         print("{}'s health: {}".format(self.name, self.health))
 
+    def knockout(self):
+        if self.is_knocked_out:
+            print("{name} is already knocked out.".format(name=self.name))
+        else:
+            self.is_knocked_out = True
+            print("{name} is knocked out!".format(name=self.name))
+
+    def revive(self):
+        if self.is_knocked_out:
+            self.is_knocked_out = False
+            self.health = 1
+            print("{name} has been revived with {health} health!".format(name=self.name, health=self.health))
+            else:
+            print("{name} is not knocked out.".format(name=self.name))
 
